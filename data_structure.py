@@ -80,8 +80,25 @@ class LinkedImageList(List):
     def returnPointer(self):
         aux = self._header
         return aux
+    def length(self):
+        occurrence = 0
+        if self._header is not None:
+            aux = self._header
+            while aux is not None:
+                occurrence += 1
+                aux = aux.next
+        return occurrence
 
-
+    def get(self, index):
+        occurrence = 0
+        if self._header is not None:
+            aux = self._header
+            while aux is not None and occurrence < index:
+                occurrence+=1
+                aux = aux.next
+            if aux is None:
+                return 'Not found'
+            return aux
 
 class ImgType:
     def __init__(self, img, delay):
