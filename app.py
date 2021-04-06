@@ -12,7 +12,7 @@ class ImgThread(Thread):
     def __init__(self, listOfImages):
         Thread.__init__(self)
         self._images = listOfImages
-        self._initialPosition = listOfImages.returnPointer()
+        self._initialPosition = listOfImages.return_pointer()
         self._aux = self._initialPosition
         global globalStateApp
         globalStateApp = StateProgram.play
@@ -57,15 +57,18 @@ class ImgThread(Thread):
         pass
 
     def editImageDuration(self, result, duration):
-        output = None
-        output = self._images.get(result)
-        if output is not None:
-            if duration.isnumeric():
-                newDuration = int(duration)
-                output.elem.delay = newDuration
-                return True
-        return False
 
+        try:
+            output = None
+            output = self._images.get(result)
+            if output is not None:
+                if duration.isnumeric():
+                    newDuration = int(duration)
+                    output.elem.delay = newDuration
+                    return True
+            return False
+        except:
+            print('Erro ao mudar imagem. Tente novamente.')
     def run (self):
         print('pressione E para Editar a sequencia de imagens ou Q para sair')
         while True:

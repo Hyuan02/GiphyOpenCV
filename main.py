@@ -1,8 +1,9 @@
 import numpy as np
 import cv2
-from data_structure import LinkedImageList, Node, ImgType
+from data_structure import LinkedList, Node, ImgType
 import glob
 from app import ImgThread
+
 
 def getNextImage(aux, initialPosition):
     if aux is None:
@@ -16,7 +17,7 @@ def wait_for_key_in_delay(delay):
     keyToKnow = cv2.waitKeyEx(delay)
 
 if __name__ == '__main__':
-    listOfImages = LinkedImageList()
+    listOfImages = LinkedList()
     filesInFolder = glob.glob("assets/*")
 
 
