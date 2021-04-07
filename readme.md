@@ -1,4 +1,4 @@
-#Visualizador de GIF Open CV
+# Visualizador de GIF Open CV
 
 ### Uso
 
