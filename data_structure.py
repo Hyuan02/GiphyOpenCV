@@ -8,15 +8,19 @@ class List(ABC):
     @abstractmethod
     def insert(self, elem):
         pass
+
     @abstractmethod
     def remove(self, elem):
         pass
+
     @abstractmethod
     def count(self, elem):
         pass
+
     @abstractmethod
     def clear(self):
         pass
+
     @abstractmethod
     def index(self, elem):
         pass
@@ -57,8 +61,6 @@ class LinkedList(List):
             self._tail = Node(elem)
             currentTail.next = self._tail
 
-        pass
-
     def remove(self, elem):
         """
         Remoção da primeira ocorrência de um elemento na lista.
@@ -79,8 +81,6 @@ class LinkedList(List):
                         break
                     prev = aux
                     aux = aux.next
-        pass
-
 
     def count(self, elem) -> int:
         """
@@ -105,7 +105,6 @@ class LinkedList(List):
         """
         self._header = None
         self._tail = None
-        pass
 
     def index(self, elem) -> int:
         """
@@ -143,7 +142,6 @@ class LinkedList(List):
                 occurrence += 1
                 aux = aux.next
         return occurrence
-
 
     def get(self, index) -> Node:
         """
